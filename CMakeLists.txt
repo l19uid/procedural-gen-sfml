@@ -10,7 +10,17 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(CMakeSFMLProject src/main.cpp)
+add_executable(CMakeSFMLProject
+        src/main.cpp
+        src/objects/Cell.cpp src/objects/Cell.h
+        src/objects/Line.cpp src/objects/Line.h
+        src/objects/Point.cpp src/objects/Point.h
+        src/objects/World.cpp src/objects/World.h
+        src/utils/random.h
+        src/utils/enums.cpp
+        src/utils/FastNoiseLite.h
+        src/objects/World.h
+)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
 

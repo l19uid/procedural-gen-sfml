@@ -1,9 +1,17 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include "objects/World.h"
+
+using namespace sf;
+using namespace std;
 
 int main()
 {
-    auto window = sf::RenderWindow{ { 1920u, 1080u }, "CMake SFML Project" };
+    auto window = sf::RenderWindow{ { 800u, 650u }, "CMake SFML Project" };
     window.setFramerateLimit(144);
+    World world = World(20, 0);
+    world.Generate();
 
     while (window.isOpen())
     {
@@ -16,6 +24,7 @@ int main()
         }
 
         window.clear();
+        world.Render(window);
         window.display();
     }
 }
