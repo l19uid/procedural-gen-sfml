@@ -6,12 +6,21 @@
 using namespace sf;
 using namespace std;
 
+#include "utils/random.h"
+
 int main()
 {
     auto window = sf::RenderWindow{ { 800u, 650u }, "CMake SFML Project" };
     window.setFramerateLimit(144);
-    World world = World(20, 0);
-    world.Generate();
+
+    FastNoiseLite gen;
+    gen.SetSeed(111);
+    gen.SetFractalOctaves(4);
+    gen.SetFrequency(10);
+    gen.SetNoiseType(FastNoiseLite::NoiseType::NoiseType_Perlin);
+
+    World world = World(20, gen);
+    world.generate();
 
     while (window.isOpen())
     {
@@ -24,7 +33,7 @@ int main()
         }
 
         window.clear();
-        world.Render(window);
+        world.render(window);
         window.display();
     }
 }

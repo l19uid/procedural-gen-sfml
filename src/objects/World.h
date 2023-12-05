@@ -9,11 +9,12 @@
 #include "Point.h"
 #include "Cell.h"
 #include "../utils/random.h"
-
+#include "../utils/FastNoiseLite.h"
+#include "../utils/BiomeHandler.h"
 class World {
 private:
     int m_size;
-    int m_seed;
+    FastNoiseLite m_gen;
     int m_numPoints;
     int m_numCells;
     int m_numLines;
@@ -23,17 +24,18 @@ private:
     std::vector<Line> m_lines;
 
 public:
-    World(int size, int seed);
-    void Generate();
-    void Render(sf::RenderWindow& window);
-    int GetSize() const;
-    int GetSeed() const;
-    int GetNumPoints() const;
-    int GetNumCells() const;
-    int GetNumLines() const;
-    std::vector<Point> GetPoints() const;
-    std::vector<Cell> GetCells() const;
-    std::vector<Line> GetLines() const;
+    World(int size, FastNoiseLite gen);
+    void generate();
+    void render(sf::RenderWindow& window);
+    int getSize() const;
+    int getSeed() const;
+    int getNumPoints() const;
+    int getNumCells() const;
+    int getNumLines() const;
+    std::vector<Point> getPoints() const;
+    std::vector<Cell> getCells() const;
+    std::vector<Line> getLines() const;
+    float GetNoiseHeight(float x, float y);
 };
 
 

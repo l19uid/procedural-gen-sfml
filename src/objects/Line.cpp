@@ -1,8 +1,8 @@
 #include "Line.h"
 
-Line::Line(Point a, Point b, float width, sf::Color color) :
-        m_pointA(a),
-        m_pointB(b),
+Line::Line(Point *a, Point *b, float width, sf::Color color) :
+        m_pointA(*a),
+        m_pointB(*b),
         m_width(width),
         m_color(color) {}
 
@@ -24,8 +24,8 @@ sf::Color Line::getColor() const {
 
 void Line::Render(sf::RenderWindow& window) {
     sf::Vertex line[] = {
-            sf::Vertex(m_pointA.getPosition(), m_color),
-            sf::Vertex(m_pointB.getPosition(),m_color)
+            sf::Vertex(getA().getPosition(), m_color),
+            sf::Vertex(getB().getPosition(),m_color)
     };
 
     window.draw(line, 2, sf::Lines);
