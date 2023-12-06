@@ -5,7 +5,7 @@
 
 class Line {
 public:
-    Line(Point *pointA, Point *pointB, float width, sf::Color color = sf::Color::White);
+    Line(Point pointA, Point pointB, float width, sf::Color color = sf::Color::White);
 
     Point getA() const;
     Point getB() const;
@@ -14,8 +14,8 @@ public:
     void Render(sf::RenderWindow& window);
 
 private:
-    Point &m_pointA;
-    Point &m_pointB;
+    Point m_pointA;
+    Point m_pointB;
     float m_width;
     sf::Color m_color;
 };

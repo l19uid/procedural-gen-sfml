@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test.rule"
 		},
 		{
-			"file" : "D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update.rule"
+			"file" : "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update.rule"
 		}
 	],
 	"target" : 

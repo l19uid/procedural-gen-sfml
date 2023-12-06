@@ -1,4 +1,4 @@
-# Install script for directory: D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-src/src/SFML
+# Install script for directory: W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-src/src/SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,17 +34,17 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Apps/CLion/CLion 2022.2.1/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/System/cmake_install.cmake")
-  include("D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Main/cmake_install.cmake")
-  include("D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Window/cmake_install.cmake")
-  include("D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake")
-  include("D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake")
-  include("D:/Dekstop/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake")
+  include("W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/System/cmake_install.cmake")
+  include("W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Main/cmake_install.cmake")
+  include("W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Window/cmake_install.cmake")
+  include("W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake")
+  include("W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake")
+  include("W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake")
 
 endif()
 

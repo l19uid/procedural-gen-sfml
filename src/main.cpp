@@ -14,12 +14,12 @@ int main()
     window.setFramerateLimit(144);
 
     FastNoiseLite gen;
-    gen.SetSeed(111);
+    gen.SetSeed(1337);
     gen.SetFractalOctaves(4);
     gen.SetFrequency(10);
     gen.SetNoiseType(FastNoiseLite::NoiseType::NoiseType_Perlin);
 
-    World world = World(20, gen);
+    World world = World(10,50, gen);
     world.generate();
 
     while (window.isOpen())

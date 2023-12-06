@@ -1,0 +1,1 @@
+-I"W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-src/include" -I"W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-src/src" -I"W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-src/extlibs/headers/vulkan" -isystem "W:/projects/procedural-gen-sfml/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include"

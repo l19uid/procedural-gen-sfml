@@ -18,13 +18,14 @@ private:
     int m_numPoints;
     int m_numCells;
     int m_numLines;
+    int m_gap = 20;
 
     std::vector<Point> m_points;
     std::vector<Cell> m_cells;
     std::vector<Line> m_lines;
 
 public:
-    World(int size, FastNoiseLite gen);
+    World(int size, int gap, FastNoiseLite gen);
     void generate();
     void render(sf::RenderWindow& window);
     int getSize() const;

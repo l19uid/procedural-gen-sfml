@@ -1,8 +1,8 @@
 #include "Line.h"
 
-Line::Line(Point *a, Point *b, float width, sf::Color color) :
-        m_pointA(*a),
-        m_pointB(*b),
+Line::Line(Point pointA, Point pointB, float width, sf::Color color) :
+        m_pointA(pointA),
+        m_pointB(pointB),
         m_width(width),
         m_color(color) {}
 
