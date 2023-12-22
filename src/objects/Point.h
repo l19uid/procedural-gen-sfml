@@ -8,10 +8,11 @@ class Point {
 public:
     Point(sf::Vector2f position, bool isFilled, float radius, float thickness,
           sf::Color color = sf::Color::White, sf::Color outlineColor = sf::Color::White,
-          bool centered = true);
+          bool centered = true, float height = 0);
 
     sf::Vector2f getPosition() const;
     bool getIsFilled() const;
+    float getHeight() const;
     float getThickness() const;
     float getRadius() const;
     sf::Color getColor() const;
@@ -22,6 +23,7 @@ private:
     sf::Vector2f m_position;
     float m_radius;
     float m_thickness;
+    float m_height;
     bool m_filled;
     bool m_centered;
     sf::Color m_color;

@@ -41,8 +41,9 @@ void World::generate() {
     std::vector<Point> points;
     for (int x = 0; x < m_size; x++) {
         for (int y = 0; y < m_size; y++) {
-                points.emplace_back( sf::Vector2f((x+1)*m_gap, (y+1)*m_gap),true,2, 0,
+                points.emplace_back( sf::Vector2f((x+1)*m_gap, (y+1)*m_gap),true,16, 0,
                                         BiomeHandler::ConvertToColor(GetNoiseHeight(x,y),enums::Biome::GRASSLAND));
+                std::cout << "Point: " << x << ", " << y << " : " << GetNoiseHeight(x,y) << std::endl;
         }
     }
     m_points = points;
@@ -50,52 +51,29 @@ void World::generate() {
 
     std::vector<Line> lines;
     for (int x = 0; x < m_numPoints-1; x++) {
-        if(x+m_size<m_numPoints)
-            lines.emplace_back(m_points[x+m_size], m_points[x], 1,
-                               random::randomColor());
-                               //BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                               //                             enums::Biome::GRASSLAND));
-        if(x%m_size-19!=0)
-            lines.emplace_back(m_points[x], m_points[x+1], 1,
-                               random::randomColor());
-                               //BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                               //                             enums::Biome::GRASSLAND));
-        if(x%m_size-19!=0 && x+m_size<m_numPoints)
-            lines.emplace_back(m_points[x+1], m_points[x+m_size], 1,
-                               random::randomColor());
-                               //BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                               //                             enums::Biome::GRASSLAND));
-        // Add the other triangle
-
-        if(x%m_size-19!=0 && x+m_size<m_numPoints)
-            lines.emplace_back(m_points[x+m_size], m_points[x+1], 1,
-                               random::randomColor());
-                               //BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                               //                             enums::Biome::GRASSLAND));
-        if(x%m_size-19!=0 && x+m_size<m_numPoints)
-            lines.emplace_back(m_points[x+1], m_points[x+m_size+1], 1,
-                               random::randomColor());
-                               //BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                               //                             enums::Biome::GRASSLAND));
-        if(x+m_size<m_numPoints)
-            lines.emplace_back(m_points[x+m_size+1], m_points[x+m_size], 1,
-                               random::randomColor());
-                               //BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                               //                             enums::Biome::GRASSLAND));
+        if(x%m_size!=0 && x+m_size<m_numPoints)
+        {
+            lines.emplace_back(m_points[x-1], m_points[x], 1, sf::Color::White);
+            lines.emplace_back(m_points[x], m_points[x+m_size], 1, sf::Color::White);
+            lines.emplace_back(m_points[x+m_size], m_points[x-1], 1, sf::Color::White);
+        }
+        if(x%m_size!=m_size-1 && x-m_size>=0)
+        {
+            lines.emplace_back(m_points[x-m_size], m_points[x], 1, sf::Color::White);
+            lines.emplace_back(m_points[x], m_points[x+1], 1, sf::Color::White);
+            lines.emplace_back(m_points[x+1], m_points[x-m_size], 1, sf::Color::White);
+        }
     }
     m_lines = lines;
     m_numLines = (int)lines.size();
 
     std::vector<Cell> cells;
-    for (int x = 0; x < m_numPoints-1; x++) {
-        if(x%m_size-19!=0 && x+m_size<m_numPoints)
-            cells.emplace_back(std::vector<Line>{m_lines[x], m_lines[x+1], m_lines[x+m_size]}, Cell::generateCentroid(std::vector<Line>{m_lines[x], m_lines[x+1], m_lines[x+m_size]}), 1, false,
-                               BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                                                            enums::Biome::GRASSLAND));
-        if(x%m_size-19!=0 && x+m_size<m_numPoints)
-            cells.emplace_back(std::vector<Line>{m_lines[x+1], m_lines[x+m_size+1], m_lines[x+m_size]}, Cell::generateCentroid(std::vector<Line>{m_lines[x+1], m_lines[x+m_size+1], m_lines[x+m_size]}), 1, false,
-                               BiomeHandler::ConvertToColor(GetNoiseHeight(m_points[x].getPosition().x,m_points[x].getPosition().y),
-                                                            enums::Biome::GRASSLAND));
+    for (int x = 0; x < m_numLines; x+=3) {
+        std::vector<Line> lines;
+        lines.emplace_back(m_lines[x]);
+        lines.emplace_back(m_lines[x+1]);
+        lines.emplace_back(m_lines[x+2]);
+        cells.emplace_back(lines, Cell::generateCentroid(lines), 1, false, sf::Color::Green, true);
     }
 
     m_cells = cells;
@@ -113,13 +91,13 @@ void World::render(sf::RenderWindow& window) {
     //for (int i = 0; i < m_numLines; i++) {
     //    m_lines[i].Render(window);
     //}
-
-    // Render cells
-    for (int i = 0; i < m_numCells; i++) {
-        m_cells[i].Render(window);
-    }
+//
+    //// Render cells
+    //for (int i = 0; i < m_numCells; i++) {
+    //    m_cells[i].Render(window);
+    //}
 }
 
 float World::GetNoiseHeight(float x, float y) {
-    return m_gen.GetNoise(x,y);
+    return m_gen.GetNoise(x,y) * 64 ;
 }

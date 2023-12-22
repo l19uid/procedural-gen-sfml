@@ -1,4 +1,5 @@
 #include "Cell.h"
+#include "../utils/random.h"
 
 Cell::Cell(std::vector<Line> lines, Point centroid, float thickness, bool showCentroid, sf::Color color, bool useLineColor) :
         m_lines(lines),

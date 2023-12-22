@@ -15,9 +15,6 @@ int main()
 
     FastNoiseLite gen;
     gen.SetSeed(1337);
-    gen.SetFractalOctaves(4);
-    gen.SetFrequency(10);
-    gen.SetNoiseType(FastNoiseLite::NoiseType::NoiseType_Perlin);
 
     World world = World(10,50, gen);
     world.generate();
